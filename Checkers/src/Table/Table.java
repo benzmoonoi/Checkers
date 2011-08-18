@@ -5,11 +5,20 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.TransferHandler;
+import javax.swing.border.Border;
 
 
 public class Table extends JFrame{
@@ -81,12 +90,19 @@ public class Table extends JFrame{
 	JPanel box63 = new JPanel();
 	JPanel box64 = new JPanel();
 	
-	JButton b1 = new JButton();
+	JLabel Queen = new JLabel("Queen",SwingConstants.LEADING);
+	JLabel Empty = new JLabel("    ",SwingConstants.LEADING);
 	public Table(){
+		
+		Queen.setTransferHandler(new TransferHandler("text"));
+		Empty.setTransferHandler(new TransferHandler("text"));
 		
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Image img = kit.getImage("Image/thaichess.JPG");
-
+		
+		MouseListener listener = new DragMouseAdapter();
+		Queen.addMouseListener(listener);
+		Empty.addMouseListener(listener);
 		setIconImage(img);
 		setBackground(Color.white);
 		
@@ -94,8 +110,9 @@ public class Table extends JFrame{
 		panelFrame.setBackground(Color.WHITE);
 		
 		box1.setBackground(Color.WHITE);
-		box1.add(b1);
+		box1.add(Queen);
 		box2.setBackground(Color.RED);
+		box2.add(Empty);
 		box3.setBackground(Color.WHITE);
 		box4.setBackground(Color.RED);
 		box5.setBackground(Color.WHITE);
@@ -177,14 +194,29 @@ public class Table extends JFrame{
 		
 		add(panelFrame);
 		setTitle("Checkers");
+		setBorder(BorderFactory.createEmptyBorder());
 		setSize(500,500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 		
 	}
 
+
+	private void setBorder(Border createEmptyBorder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private class DragMouseAdapter extends MouseAdapter {
+		public void mousePressed(MouseEvent e) {
+			JLabel c = (JLabel) e.getSource();
+			TransferHandler handler = c.getTransferHandler();
+			handler.exportAsDrag(c, e, TransferHandler.COPY);
+		}
+	}
 	public static void main(String[] args){
-		new Table();
+		new Table();	   
 	}
 	
 }
