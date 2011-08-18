@@ -322,10 +322,41 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 		}
 		
 	}
-	
-	public static void main(String args[]){
-		System.out.println(CheckKnightP1());
 
-	}
+	
+//	public static String winner(){
+//		resetCharecter();
+//		loadBorad();
+//		String win =  "";
+//		charecter[0][3] = "empty";
+//		boolean ck = true;
+//		printBoard();
+//		for(int i=0;i<8;i++){
+//			for(int j=0;j<8;j++){
+//				if(charecter[i][j].equals("KingP1")){
+//					ck = true;
+//					System.out.println(charecter[i][j]);
+//					if(ck != true){
+//						win = "player1";
+//					}
+//				}
+//				if(charecter[i][j].equals("KingP2")){
+//					ck = true;
+//					System.out.println(charecter[i][j]);
+//					if(ck != true){
+//						win = "player2";
+//					}
+//				}
+//			}
+//		}System.out.println(ck);
+//		
+//		return win;
+//	}
+//	
+//	
+//	public static void main(String args[]){
+//		winner();
+//
+//	}
 
 }

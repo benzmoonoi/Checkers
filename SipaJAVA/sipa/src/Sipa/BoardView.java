@@ -15,7 +15,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
-
 public class BoardView extends JFrame {
 	static Color boardEvenColor = Color.RED;
 	static Color boardOddColor = Color.WHITE;

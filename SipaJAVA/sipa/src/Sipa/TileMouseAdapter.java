@@ -3,14 +3,10 @@ package Sipa;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextPane;
-import javax.swing.plaf.basic.BasicOptionPaneUI;
 
 public class TileMouseAdapter implements ActionListener {
 	private JButton button;
@@ -18,7 +14,7 @@ public class TileMouseAdapter implements ActionListener {
 	int x;
 	int y;
 	// Player1 is Yellow, Player2 is Blue
-	static boolean player1 = false;
+	static boolean player2 = false;
 	String moveRook;
 	JLabel p;
 	JPanel panelTop;
@@ -36,44 +32,33 @@ public class TileMouseAdapter implements ActionListener {
 		this.p.setText("Player1");
 		this.panelTop = panelLabelPlayer;
 		this.panelTop.setBackground(Color.YELLOW);
-
-		// for (int i = 0; i < 8; i++) {
-		// for (int j = 0; j < 8; j++) {
-		// if (BoardModel.charecter[i][j].equals("RookP2")
-		// | BoardModel.charecter[i][j].equals("KnightP2")
-		// | BoardModel.charecter[i][j].equals("BishopP2")
-		// | BoardModel.charecter[i][j].equals("QueenP2")
-		// | BoardModel.charecter[i][j].equals("KingP2")
-		// | BoardModel.charecter[i][j].equals("PawnP2")) {
-		// BoardView.b[i][j].setEnabled(false);
-		// }
-		// }
-		// }
-
 	}
 
 	public void pick() {
-		System.out.println("enter pick");
+		//System.out.println("enter pick");
 		board.current = this;
-		System.out.println("pick "
-				+ BoardModel.getState(board.current.x, board.current.y));
+		//System.out.println("pick "
+				//+ BoardModel.getState(board.current.x, board.current.y));
 		test = BoardModel.getState(board.current.x, board.current.y);
 		// System.out.println(test);
 		stateColor = this.button.getBackground();
 		this.button.setBackground(Color.GREEN);
+		
+		
+		
 	}
 
 	public void put() {
-		System.out.println("enter put");
-		System.out.println(this.button.getName());
+		//System.out.println("enter put");
+		//System.out.println(this.button.getName());
 		if (test.equals(this.button.getName())) {
 			// System.out.println("OK");
 			pick();
 
 		} else if (!test.equals(this.button.getName())) {
-
-			System.out.println("put = "
-					+ BoardModel.getState(board.current.x, board.current.y));
+			
+			//System.out.println("put = "
+					//+ BoardModel.getState(board.current.x, board.current.y));
 			// Update model
 			int from_x = board.current.x;
 			int from_y = board.current.y;
@@ -84,8 +69,8 @@ public class TileMouseAdapter implements ActionListener {
 			// Refresh view
 			String empty = BoardModel.getCharecter(from_x, from_y);
 			String character = BoardModel.getCharecter(to_x, to_y);
-			if (player1 == true) {
-
+			if (player2 == true) {
+				//System.out.println(player1);
 				// System.out.println("Player2");
 				// System.out.println(BoardModel.getBoardStates());
 				if (character.equals("QueenP2")) {
@@ -105,7 +90,7 @@ public class TileMouseAdapter implements ActionListener {
 				board.current.button.setIcon(null);
 				board.current.button.setBackground(stateColor);
 				// this.button.setText(character);
-				player1 = false;
+				player2 = false;
 				this.p.setText("Player1");
 				this.panelTop.setBackground(Color.YELLOW);
 
@@ -144,27 +129,31 @@ public class TileMouseAdapter implements ActionListener {
 				board.current.button.setIcon(null);
 				board.current.button.setBackground(stateColor);
 				// this.button.setText(character);
-				player1 = true;
+				player2 = true;
 				this.p.setText("Player2");
 				this.panelTop.setBackground(Color.BLUE);
-
 			}
 		}
 
-		if (player1 != true) {
+		
+		BoardView.setColorButton();
+		board.current = null;
+	}
+
+	public static void disEnable1(boolean player2) {
+		if (player2 == true) {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
-					if (BoardModel.charecter[i][j].equals("RookP2")
-							| BoardModel.charecter[i][j].equals("KnightP2")
-							| BoardModel.charecter[i][j].equals("BishopP2")
-							| BoardModel.charecter[i][j].equals("QueenP2")
-							| BoardModel.charecter[i][j].equals("KingP2")
-							| BoardModel.charecter[i][j].equals("PawnP2")) {
+					if (BoardModel.charecter[i][j].equals("RookP1")
+							| BoardModel.charecter[i][j].equals("KnightP1")
+							| BoardModel.charecter[i][j].equals("BishopP1")
+							| BoardModel.charecter[i][j].equals("QueenP1")
+							| BoardModel.charecter[i][j].equals("KingP1")
+							| BoardModel.charecter[i][j].equals("PawnP1")) {
 						BoardView.b[i][j].setEnabled(true);
 					}
 				}
 			}
-		} else {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
 					if (BoardModel.charecter[i][j].equals("RookP2")
@@ -177,50 +166,99 @@ public class TileMouseAdapter implements ActionListener {
 					}
 				}
 			}
-			// }else if(player2 == true){
-			// for (int i = 0; i < 8; i++) {
-			// for (int j = 0; j < 8; j++) {
-			// if (BoardModel.charecter[i][j].equals("RookP1")
-			// | BoardModel.charecter[i][j].equals("KnightP1")
-			// | BoardModel.charecter[i][j].equals("BishopP1")
-			// | BoardModel.charecter[i][j].equals("QueenP1")
-			// | BoardModel.charecter[i][j].equals("KingP1")
-			// | BoardModel.charecter[i][j].equals("PawnP1")) {
-			// BoardView.b[i][j].setEnabled(false);
-			// }
-			// }
-			// }
-			// }else if(player2 == false){
-			// for (int i = 0; i < 8; i++) {
-			// for (int j = 0; j < 8; j++) {
-			// if (BoardModel.charecter[i][j].equals("RookP1")
-			// | BoardModel.charecter[i][j].equals("KnightP1")
-			// | BoardModel.charecter[i][j].equals("BishopP1")
-			// | BoardModel.charecter[i][j].equals("QueenP1")
-			// | BoardModel.charecter[i][j].equals("KingP1")
-			// | BoardModel.charecter[i][j].equals("PawnP1")) {
-			// BoardView.b[i][j].setEnabled(true);
-			// }
-			// }
-			// }
+		}else{
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP2")
+							| BoardModel.charecter[i][j].equals("KnightP2")
+							| BoardModel.charecter[i][j].equals("BishopP2")
+							| BoardModel.charecter[i][j].equals("QueenP2")
+							| BoardModel.charecter[i][j].equals("KingP2")
+							| BoardModel.charecter[i][j].equals("PawnP2")) {
+						BoardView.b[i][j].setEnabled(true);
+					}
+				}
+			}
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP1")
+							| BoardModel.charecter[i][j].equals("KnightP1")
+							| BoardModel.charecter[i][j].equals("BishopP1")
+							| BoardModel.charecter[i][j].equals("QueenP1")
+							| BoardModel.charecter[i][j].equals("KingP1")
+							| BoardModel.charecter[i][j].equals("PawnP1")) {
+						BoardView.b[i][j].setEnabled(false);
+					}
+				}
+			}
 		}
-		BoardView.setColorButton();
-		board.current = null;
 	}
-
-	public static void moveRook() {
-		String state = "";
-
+	public static void disEnable2(boolean player2) {
+		if (player2 == true) {
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP1")
+							| BoardModel.charecter[i][j].equals("KnightP1")
+							| BoardModel.charecter[i][j].equals("BishopP1")
+							| BoardModel.charecter[i][j].equals("QueenP1")
+							| BoardModel.charecter[i][j].equals("KingP1")
+							| BoardModel.charecter[i][j].equals("PawnP1")) {
+						BoardView.b[i][j].setEnabled(false);
+					}
+				}
+			}
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP2")
+							| BoardModel.charecter[i][j].equals("KnightP2")
+							| BoardModel.charecter[i][j].equals("BishopP2")
+							| BoardModel.charecter[i][j].equals("QueenP2")
+							| BoardModel.charecter[i][j].equals("KingP2")
+							| BoardModel.charecter[i][j].equals("PawnP2")) {
+						BoardView.b[i][j].setEnabled(true);
+					}
+				}
+			}
+		}else{
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP2")
+							| BoardModel.charecter[i][j].equals("KnightP2")
+							| BoardModel.charecter[i][j].equals("BishopP2")
+							| BoardModel.charecter[i][j].equals("QueenP2")
+							| BoardModel.charecter[i][j].equals("KingP2")
+							| BoardModel.charecter[i][j].equals("PawnP2")) {
+						BoardView.b[i][j].setEnabled(false);
+					}
+				}
+			}
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP1")
+							| BoardModel.charecter[i][j].equals("KnightP1")
+							| BoardModel.charecter[i][j].equals("BishopP1")
+							| BoardModel.charecter[i][j].equals("QueenP1")
+							| BoardModel.charecter[i][j].equals("KingP1")
+							| BoardModel.charecter[i][j].equals("PawnP1")) {
+						BoardView.b[i][j].setEnabled(true);
+					}
+				}
+			}
+		}
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		System.out.println("enter mouse clicked");
+		//System.out.println("enter mouse clicked");
 		if (board.current == null) {
+			disEnable2(player2);
 			pick();
+			disEnable1(player2);
 
 		} else {
+			disEnable1(player2);
 			put();
+			disEnable2(player2);
 		}
 	}
 
