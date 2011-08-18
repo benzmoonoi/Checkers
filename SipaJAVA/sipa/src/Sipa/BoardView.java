@@ -42,7 +42,7 @@ public class BoardView extends JFrame {
 		// register button to MouseListenner
 		for(int i=7;i>=0;i--){
 			for(int j=0;j<8;j++){
-				b[i][j].addMouseListener(new TileMouseAdapter(b[i][j], this, i, j, player, panelLabelPlayer));
+				b[i][j].addActionListener(new TileMouseAdapter(b[i][j], this, i, j, player, panelLabelPlayer));
 			}
 		}						
 		setFrame(this, panel , panelLabelPlayer, panelLabelColumn, panelLabelRow, panelStateUser);	// set Frame
