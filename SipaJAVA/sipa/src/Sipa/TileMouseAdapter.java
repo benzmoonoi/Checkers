@@ -58,7 +58,7 @@ public class TileMouseAdapter implements ActionListener {
 		System.out.println("pick "
 				+ BoardModel.getState(board.current.x, board.current.y));
 		test = BoardModel.getState(board.current.x, board.current.y);
-		//System.out.println(test);
+		// System.out.println(test);
 		stateColor = this.button.getBackground();
 		this.button.setBackground(Color.GREEN);
 	}
@@ -67,10 +67,10 @@ public class TileMouseAdapter implements ActionListener {
 		System.out.println("enter put");
 		System.out.println(this.button.getName());
 		if (test.equals(this.button.getName())) {
-			//System.out.println("OK");
+			// System.out.println("OK");
 			pick();
 
-		} else if(!test.equals(this.button.getName())){
+		} else if (!test.equals(this.button.getName())) {
 
 			System.out.println("put = "
 					+ BoardModel.getState(board.current.x, board.current.y));
@@ -151,60 +151,60 @@ public class TileMouseAdapter implements ActionListener {
 			}
 		}
 
-		// if(player1 != true){
-		// for (int i = 0; i < 8; i++) {
-		// for (int j = 0; j < 8; j++) {
-		// if (BoardModel.charecter[i][j].equals("RookP2")
-		// | BoardModel.charecter[i][j].equals("KnightP2")
-		// | BoardModel.charecter[i][j].equals("BishopP2")
-		// | BoardModel.charecter[i][j].equals("QueenP2")
-		// | BoardModel.charecter[i][j].equals("KingP2")
-		// | BoardModel.charecter[i][j].equals("PawnP2")) {
-		// BoardView.b[i][j].setEnabled(true);
-		// }
-		// }
-		// }
-		// }else {
-		// for (int i = 0; i < 8; i++) {
-		// for (int j = 0; j < 8; j++) {
-		// if (BoardModel.charecter[i][j].equals("RookP2")
-		// | BoardModel.charecter[i][j].equals("KnightP2")
-		// | BoardModel.charecter[i][j].equals("BishopP2")
-		// | BoardModel.charecter[i][j].equals("QueenP2")
-		// | BoardModel.charecter[i][j].equals("KingP2")
-		// | BoardModel.charecter[i][j].equals("PawnP2")) {
-		// BoardView.b[i][j].setEnabled(false);
-		// }
-		// }
-		// }
-		// }else if(player2 == true){
-		// for (int i = 0; i < 8; i++) {
-		// for (int j = 0; j < 8; j++) {
-		// if (BoardModel.charecter[i][j].equals("RookP1")
-		// | BoardModel.charecter[i][j].equals("KnightP1")
-		// | BoardModel.charecter[i][j].equals("BishopP1")
-		// | BoardModel.charecter[i][j].equals("QueenP1")
-		// | BoardModel.charecter[i][j].equals("KingP1")
-		// | BoardModel.charecter[i][j].equals("PawnP1")) {
-		// BoardView.b[i][j].setEnabled(false);
-		// }
-		// }
-		// }
-		// }else if(player2 == false){
-		// for (int i = 0; i < 8; i++) {
-		// for (int j = 0; j < 8; j++) {
-		// if (BoardModel.charecter[i][j].equals("RookP1")
-		// | BoardModel.charecter[i][j].equals("KnightP1")
-		// | BoardModel.charecter[i][j].equals("BishopP1")
-		// | BoardModel.charecter[i][j].equals("QueenP1")
-		// | BoardModel.charecter[i][j].equals("KingP1")
-		// | BoardModel.charecter[i][j].equals("PawnP1")) {
-		// BoardView.b[i][j].setEnabled(true);
-		// }
-		// }
-		// }
-		// }
-		BoardView.setColorButton(); 
+		if (player1 != true) {
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP2")
+							| BoardModel.charecter[i][j].equals("KnightP2")
+							| BoardModel.charecter[i][j].equals("BishopP2")
+							| BoardModel.charecter[i][j].equals("QueenP2")
+							| BoardModel.charecter[i][j].equals("KingP2")
+							| BoardModel.charecter[i][j].equals("PawnP2")) {
+						BoardView.b[i][j].setEnabled(true);
+					}
+				}
+			}
+		} else {
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					if (BoardModel.charecter[i][j].equals("RookP2")
+							| BoardModel.charecter[i][j].equals("KnightP2")
+							| BoardModel.charecter[i][j].equals("BishopP2")
+							| BoardModel.charecter[i][j].equals("QueenP2")
+							| BoardModel.charecter[i][j].equals("KingP2")
+							| BoardModel.charecter[i][j].equals("PawnP2")) {
+						BoardView.b[i][j].setEnabled(false);
+					}
+				}
+			}
+			// }else if(player2 == true){
+			// for (int i = 0; i < 8; i++) {
+			// for (int j = 0; j < 8; j++) {
+			// if (BoardModel.charecter[i][j].equals("RookP1")
+			// | BoardModel.charecter[i][j].equals("KnightP1")
+			// | BoardModel.charecter[i][j].equals("BishopP1")
+			// | BoardModel.charecter[i][j].equals("QueenP1")
+			// | BoardModel.charecter[i][j].equals("KingP1")
+			// | BoardModel.charecter[i][j].equals("PawnP1")) {
+			// BoardView.b[i][j].setEnabled(false);
+			// }
+			// }
+			// }
+			// }else if(player2 == false){
+			// for (int i = 0; i < 8; i++) {
+			// for (int j = 0; j < 8; j++) {
+			// if (BoardModel.charecter[i][j].equals("RookP1")
+			// | BoardModel.charecter[i][j].equals("KnightP1")
+			// | BoardModel.charecter[i][j].equals("BishopP1")
+			// | BoardModel.charecter[i][j].equals("QueenP1")
+			// | BoardModel.charecter[i][j].equals("KingP1")
+			// | BoardModel.charecter[i][j].equals("PawnP1")) {
+			// BoardView.b[i][j].setEnabled(true);
+			// }
+			// }
+			// }
+		}
+		BoardView.setColorButton();
 		board.current = null;
 	}
 
