@@ -32,33 +32,32 @@ public class TileMouseAdapter implements ActionListener {
 		this.p.setText("Player1");
 		this.panelTop = panelLabelPlayer;
 		this.panelTop.setBackground(Color.YELLOW);
+		disEnableBoard(player2);
+
 	}
 
 	public void pick() {
-		//System.out.println("enter pick");
+		// System.out.println("enter pick");
 		board.current = this;
-		//System.out.println("pick "
-				//+ BoardModel.getState(board.current.x, board.current.y));
+		// System.out.println("pick "
+		// + BoardModel.getState(board.current.x, board.current.y));
 		test = BoardModel.getState(board.current.x, board.current.y);
 		// System.out.println(test);
 		stateColor = this.button.getBackground();
 		this.button.setBackground(Color.GREEN);
-		
-		
-		
 	}
 
 	public void put() {
-		//System.out.println("enter put");
-		//System.out.println(this.button.getName());
+		// System.out.println("enter put");
+		// System.out.println(this.button.getName());
 		if (test.equals(this.button.getName())) {
 			// System.out.println("OK");
 			pick();
 
 		} else if (!test.equals(this.button.getName())) {
-			
-			//System.out.println("put = "
-					//+ BoardModel.getState(board.current.x, board.current.y));
+
+			// System.out.println("put = "
+			// + BoardModel.getState(board.current.x, board.current.y));
 			// Update model
 			int from_x = board.current.x;
 			int from_y = board.current.y;
@@ -70,7 +69,7 @@ public class TileMouseAdapter implements ActionListener {
 			String empty = BoardModel.getCharecter(from_x, from_y);
 			String character = BoardModel.getCharecter(to_x, to_y);
 			if (player2 == true) {
-				//System.out.println(player1);
+				// System.out.println(player1);
 				// System.out.println("Player2");
 				// System.out.println(BoardModel.getBoardStates());
 				if (character.equals("QueenP2")) {
@@ -135,12 +134,11 @@ public class TileMouseAdapter implements ActionListener {
 			}
 		}
 
-		
 		BoardView.setColorButton();
 		board.current = null;
 	}
 
-	public static void disEnable1(boolean player2) {
+	public static void disEnablePlayer1(boolean player2) {
 		if (player2 == true) {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
@@ -166,7 +164,7 @@ public class TileMouseAdapter implements ActionListener {
 					}
 				}
 			}
-		}else{
+		} else {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
 					if (BoardModel.charecter[i][j].equals("RookP2")
@@ -193,7 +191,8 @@ public class TileMouseAdapter implements ActionListener {
 			}
 		}
 	}
-	public static void disEnable2(boolean player2) {
+
+	public static void disEnablePlayer2(boolean player2) {
 		if (player2 == true) {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
@@ -219,7 +218,7 @@ public class TileMouseAdapter implements ActionListener {
 					}
 				}
 			}
-		}else{
+		} else {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 8; j++) {
 					if (BoardModel.charecter[i][j].equals("RookP2")
@@ -245,20 +244,49 @@ public class TileMouseAdapter implements ActionListener {
 				}
 			}
 		}
+	}
+
+	public static void disEnableBoard(boolean player2) {
+
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if (BoardModel.charecter[i][j].equals("empty")) {
+					BoardView.b[i][j].setEnabled(false);
+				}
+			}
+		}
+
+	}
+
+	public static void enableBoard(boolean player2) {
+
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				if (BoardModel.charecter[i][j].equals("empty")) {
+					BoardView.b[i][j].setEnabled(true);
+				}
+			}
+		}
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		//System.out.println("enter mouse clicked");
+		// System.out.println("enter mouse clicked");
 		if (board.current == null) {
-			disEnable2(player2);
+
+			disEnablePlayer2(player2);
 			pick();
-			disEnable1(player2);
+			disEnablePlayer1(player2);
+			enableBoard(player2); // open button is empty
 
 		} else {
-			disEnable1(player2);
+
+			disEnablePlayer1(player2); //close player
 			put();
-			disEnable2(player2);
+			disEnablePlayer2(player2);
+			disEnableBoard(player2); // close button is empty
+
 		}
 	}
 

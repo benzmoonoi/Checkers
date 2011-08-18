@@ -98,11 +98,11 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 		charecter[0][0] = charec[0]; 	charecter[0][1] = charec[1]; charecter[0][2] = charec[2]; 	charecter[0][3] = charec[4]; 
 		charecter[0][4] = charec[3]; 	charecter[0][5] = charec[2]; charecter[0][6] = charec[1]; 	charecter[0][7] = charec[0]; 
 		
-		charecter[1][0] = charec[5]; 	charecter[1][1] = charec[5]; charecter[1][2] = charec[5]; 	charecter[1][3] = charec[5]; 
-		charecter[1][4] = charec[5]; 	charecter[1][5] = charec[5]; charecter[1][6] = charec[5]; 	charecter[1][7] = charec[5]; 
+		charecter[2][0] = charec[5]; 	charecter[2][1] = charec[5]; charecter[2][2] = charec[5]; 	charecter[2][3] = charec[5]; 
+		charecter[2][4] = charec[5]; 	charecter[2][5] = charec[5]; charecter[2][6] = charec[5]; 	charecter[2][7] = charec[5]; 
 		
-		charecter[6][0] = charec[11]; 	charecter[6][1] = charec[11]; charecter[6][2] = charec[11]; 	charecter[6][3] = charec[11]; 
-		charecter[6][4] = charec[11]; 	charecter[6][5] = charec[11]; charecter[6][6] = charec[11]; 	charecter[6][7] = charec[11]; 
+		charecter[5][0] = charec[11]; 	charecter[5][1] = charec[11]; charecter[5][2] = charec[11]; 	charecter[5][3] = charec[11]; 
+		charecter[5][4] = charec[11]; 	charecter[5][5] = charec[11]; charecter[5][6] = charec[11]; 	charecter[5][7] = charec[11]; 
 		
 		charecter[7][0] = charec[6]; 	charecter[7][1] = charec[7]; charecter[7][2] = charec[8]; 	charecter[7][3] = charec[9]; 
 		charecter[7][4] = charec[10]; 	charecter[7][5] = charec[8]; charecter[7][6] = charec[7]; 	charecter[7][7] = charec[6]; 
@@ -324,39 +324,39 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 	}
 
 	
-//	public static String winner(){
-//		resetCharecter();
-//		loadBorad();
-//		String win =  "";
-//		charecter[0][3] = "empty";
-//		boolean ck = true;
-//		printBoard();
-//		for(int i=0;i<8;i++){
-//			for(int j=0;j<8;j++){
-//				if(charecter[i][j].equals("KingP1")){
-//					ck = true;
-//					System.out.println(charecter[i][j]);
-//					if(ck != true){
-//						win = "player1";
-//					}
-//				}
-//				if(charecter[i][j].equals("KingP2")){
-//					ck = true;
-//					System.out.println(charecter[i][j]);
-//					if(ck != true){
-//						win = "player2";
-//					}
-//				}
-//			}
-//		}System.out.println(ck);
-//		
-//		return win;
-//	}
-//	
-//	
-//	public static void main(String args[]){
-//		winner();
-//
-//	}
+	public static String winner(){
+		resetCharecter();
+		loadBorad();
+		String win =  "";
+		charecter[0][3] = "empty";
+		boolean ck = true;
+		printBoard();
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				if(charecter[i][j].equals("KingP1")){
+					ck = true;
+					System.out.println(charecter[i][j]);
+					if(ck != true){
+						win = "player1";
+					}
+				}
+				if(charecter[i][j].equals("KingP2")){
+					ck = true;
+					System.out.println(charecter[i][j]);
+					if(ck != true){
+						win = "player2";
+					}
+				}
+			}
+		}System.out.println(ck);
+		
+		return win;
+	}
+	
+	
+	public static void main(String args[]){
+		winner();
+
+	}
 
 }

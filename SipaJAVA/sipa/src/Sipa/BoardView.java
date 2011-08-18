@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextPane;
 
+
 public class BoardView extends JFrame {
 	static Color boardEvenColor = Color.RED;
 	static Color boardOddColor = Color.WHITE;
@@ -178,11 +179,11 @@ public class BoardView extends JFrame {
 		b[0][0].setIcon(CharectorIcon.RookY); 	b[0][1].setIcon(CharectorIcon.KnightY); b[0][2].setIcon(CharectorIcon.BishopY); 	b[0][3].setIcon(CharectorIcon.KingY); 
 		b[0][4].setIcon(CharectorIcon.QueenY); 	b[0][5].setIcon(CharectorIcon.BishopY); b[0][6].setIcon(CharectorIcon.KnightY); 	b[0][7].setIcon(CharectorIcon.RookY); 
 		
-		b[1][0].setIcon(CharectorIcon.PawnY); 	b[1][1].setIcon(CharectorIcon.PawnY); b[1][2].setIcon(CharectorIcon.PawnY); 	b[1][3].setIcon(CharectorIcon.PawnY); 
-    	b[1][4].setIcon(CharectorIcon.PawnY); 	b[1][5].setIcon(CharectorIcon.PawnY); b[1][6].setIcon(CharectorIcon.PawnY); 	b[1][7].setIcon(CharectorIcon.PawnY); 
+		b[2][0].setIcon(CharectorIcon.PawnY); 	b[2][1].setIcon(CharectorIcon.PawnY); b[2][2].setIcon(CharectorIcon.PawnY); 	b[2][3].setIcon(CharectorIcon.PawnY); 
+    	b[2][4].setIcon(CharectorIcon.PawnY); 	b[2][5].setIcon(CharectorIcon.PawnY); b[2][6].setIcon(CharectorIcon.PawnY); 	b[2][7].setIcon(CharectorIcon.PawnY); 
     	
-    	b[6][0].setIcon(CharectorIcon.PawnB); 	b[6][1].setIcon(CharectorIcon.PawnB); b[6][2].setIcon(CharectorIcon.PawnB); 	b[6][3].setIcon(CharectorIcon.PawnB); 
-    	b[6][4].setIcon(CharectorIcon.PawnB); 	b[6][5].setIcon(CharectorIcon.PawnB); b[6][6].setIcon(CharectorIcon.PawnB); 	b[6][7].setIcon(CharectorIcon.PawnB); 
+    	b[5][0].setIcon(CharectorIcon.PawnB); 	b[5][1].setIcon(CharectorIcon.PawnB); b[5][2].setIcon(CharectorIcon.PawnB); 	b[5][3].setIcon(CharectorIcon.PawnB); 
+    	b[5][4].setIcon(CharectorIcon.PawnB); 	b[5][5].setIcon(CharectorIcon.PawnB); b[5][6].setIcon(CharectorIcon.PawnB); 	b[5][7].setIcon(CharectorIcon.PawnB); 
     	
     	b[7][0].setIcon(CharectorIcon.RookB); 	b[7][1].setIcon(CharectorIcon.KnightB); b[7][2].setIcon(CharectorIcon.BishopB); 	b[7][3].setIcon(CharectorIcon.QueenB); 
 		b[7][4].setIcon(CharectorIcon.KingB); 	b[7][5].setIcon(CharectorIcon.BishopB); b[7][6].setIcon(CharectorIcon.KnightB); 	b[7][7].setIcon(CharectorIcon.RookB); 
