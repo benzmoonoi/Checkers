@@ -1,0 +1,115 @@
+package Sipa;
+
+
+public class BoardModel {
+	static String[][] charecter = new String[8][8];
+	static String[][] state = new String[8][8];
+	public static final String EMPTY = "empty";
+	
+	static public String[] charec = {"เรือ","ม้า","เม็ด","โคน","ขุน","เบี้ย"};
+
+	public static String[][] setState(){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				if(j==0){
+					state[i][j] = i+1 + "A";
+				}else if (j==1){
+					state[i][j] = i+1 + "B";
+				}else if(j==2){
+					state[i][j] = i+1 + "C";
+				}else if(j==3){
+					state[i][j] = i+1 + "D";
+				}else if(j==4){
+					state[i][j] = i+1 + "E";
+				}else if(j==5){
+					state[i][j] = i+1 + "F";
+				}else if(j==6){
+					state[i][j] = i+1 + "G";
+				}else if(j==7){
+					state[i][j] = i+1 + "H";
+				}
+			}
+		}
+		return state;
+	}
+	
+	public static String getState(){
+		String temp = "";
+		for(int i=0;i<8;i++){
+			for (int j=0;j<8;j++) {
+				temp = temp + state[i][j] + " ";
+			}
+			temp = temp + "\n";
+		}
+		return temp;
+	}
+	
+	public static void printState(){
+		System.out.println(getState());
+	}
+	
+	public static void printBoard() {
+		System.out.println(getBoardStates());
+	}
+	
+	public static String getBoardStates() {
+		String state = "";
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				state = state + charecter[i][j] + " ";
+			}
+			state = state + "\n";
+		}
+		state = state + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+		return state;
+	}
+
+	public static String getCharecter(int x, int y) {
+		 return charecter[x][y];
+	}
+	
+	public static void setCharecter(int x, int y,String in) {
+		charecter[x][y] = in;
+	}
+	
+	public static void move(int from_x, int from_y, int to_x, int to_y) {
+		String in = getCharecter(from_x, from_y);
+		setCharecter(to_x, to_y, in);
+		
+		setCharecter(from_x, from_y, EMPTY);
+	}
+
+	public static void resetCharecter() {
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				charecter[i][j] = EMPTY;
+			}
+		}	
+	}
+			
+	public static String[][] loadBorad(){
+
+		charecter[0][0] = charec[0]; 	charecter[0][1] = charec[1]; charecter[0][2] = charec[2]; 	charecter[0][3] = charec[3]; 
+		charecter[0][4] = charec[4]; 	charecter[0][5] = charec[3]; charecter[0][6] = charec[2]; 	charecter[0][7] = charec[1]; 
+		
+		charecter[0][0] = charec[5]; 	charecter[0][1] = charec[5]; charecter[0][2] = charec[5]; 	charecter[0][3] = charec[5]; 
+		charecter[0][4] = charec[5]; 	charecter[0][5] = charec[5]; charecter[0][6] = charec[5]; 	charecter[0][7] = charec[5]; 
+		return charecter;
+	}
+	
+	public static void main (String args[]){
+		resetCharecter();
+		//getCharecter();
+//		setCharecter(0,0,"Queen");
+//		printCharecter();
+//		setCharecter(0,1,"Queen");
+//		setCharecter(0, 0, EMPTY);
+//		setState();
+//		getState();
+//		printState();
+		loadBorad();
+		printBoard();
+		
+	}
+
+}

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testrun name="BoardModelTest" project="sipa" tests="18" started="18" failures="2" errors="0" ignored="0">
+  <testsuite name="test.BoardModelTest" time="0.047">
+    <testcase name="testMoveBoard" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="testSetBoard" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="testResetBoard" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="testSetState" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="testLoadBorad" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkRookP1" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkRookP2" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkPawnP1" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkPawnP2" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkKingP1" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkKingP2" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkQueenP1" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="checkQueenP2" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="CheckBishopP1" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="CheckBishopP2" classname="test.BoardModelTest" time="0.0"/>
+    <testcase name="CheckKnightP1" classname="test.BoardModelTest" time="0.047">
+      <failure>
+        <expected>1C1F</expected>
+        <actual>1B1G</actual>org.junit.ComparisonFailure: expected:&lt;1[C1F]&gt; but was:&lt;1[B1G]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:123)
+	at org.junit.Assert.assertEquals(Assert.java:145)
+	at test.BoardModelTest.CheckKnightP1(BoardModelTest.java:218)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+
+</failure>
+    </testcase>
+    <testcase name="CheckKnightP2" classname="test.BoardModelTest" time="0.0">
+      <failure>
+        <expected>8C8F</expected>
+        <actual>8B8G</actual>org.junit.ComparisonFailure: expected:&lt;8[C8F]&gt; but was:&lt;8[B8G]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:123)
+	at org.junit.Assert.assertEquals(Assert.java:145)
+	at test.BoardModelTest.CheckKnightP2(BoardModelTest.java:229)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:44)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:41)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:76)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:49)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+
+</failure>
+    </testcase>
+    <testcase name="getState" classname="test.BoardModelTest" time="0.0"/>
+  </testsuite>
+</testrun>

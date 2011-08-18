@@ -1,0 +1,51 @@
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame{
+
+	// Default Constructor
+	public MyFrame(){
+		
+		setSize(400,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		Image img = kit.getImage("images/appGallery_skin.gif");
+		setIconImage(img);
+		// create components
+		Image img1 = kit.getImage("images/icon_widget.png");
+		Icon icon1 = new ImageIcon(img1);	// set Icon before set images
+		JButton b1 = new JButton("Click Me",icon1); //set Images
+		Image img2 = kit.getImage("images/icon_languagePack.gif");
+		Icon icon2 = new ImageIcon(img2);
+		b1.setRolloverIcon(icon2);
+		b1.setToolTipText("don't click");
+		add(b1);
+		//b1.setBounds(50,100,100,25);
+		
+		JButton b2 = new JButton("Click Me b2");
+		add(b2);
+		
+		setLayout(new FlowLayout());
+		
+		//setLayout(null);
+		setVisible(true);
+	}	
+	// Constructor
+	public MyFrame(String name){
+		this();
+		this.setTitle(name);		
+	}
+	
+	public static void main(String args[]){
+		MyFrame f = new MyFrame("Hello JFrame");
+	}
+}
+

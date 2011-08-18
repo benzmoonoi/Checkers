@@ -1,0 +1,22 @@
+package files;
+
+import java.io.FileNotFoundException;
+import java.util.Formatter;
+
+public class Format {
+
+	/**
+	 * @param args
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		Formatter out = new Formatter("tmp.txt");
+		int id = 1;
+		String name = "test";
+		float score = 99.5f;
+		out.format("%2f %10s %3.2f\n",id,name,score);
+		out.flush();
+	}
+
+}

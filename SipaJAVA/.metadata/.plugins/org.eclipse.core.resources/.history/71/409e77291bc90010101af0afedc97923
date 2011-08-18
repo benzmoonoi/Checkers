@@ -1,0 +1,74 @@
+package Sipa;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+
+public class TileMouseAdapter extends MouseAdapter {
+	private JButton button;
+	BoardView board;
+	int x;
+	int y;
+	
+	public TileMouseAdapter(JButton button, BoardView board, int x, int y) {
+		this.button = button;
+		this.board = board;
+		this.x = x;
+		this.y = y;
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent event) {
+		if (board.current == null) {
+			pick();
+		} else {
+			put();
+		}
+		super.mouseClicked(event);
+	}
+	
+	public void pick() {
+		board.current = this;
+		System.out.println("pick " + board.current.x + ", " + board.current.y);
+	}
+
+	public void put() {
+		System.out.println("put = " + board.current.x + ", " + board.current.y);
+		// Update model
+		int from_x = board.current.x;
+		int from_y = board.current.y;
+		int to_x = this.x;
+		int to_y = this.y;
+		BoardModel.move(from_x, from_y, to_x, to_y);
+		
+		// Refresh view
+		String empty = BoardModel.getCharecter(from_x, from_y);
+		String character = BoardModel.getCharecter(to_x, to_y);
+		if(character.equalsIgnoreCase("Queen")){
+			this.button.setIcon(CharectorIcon.QueenY);
+		}else if(character.equalsIgnoreCase("King")){
+			this.button.setIcon(CharectorIcon.KingY);
+		}else if(character.equalsIgnoreCase("Knight")){
+			this.button.setIcon(CharectorIcon.KnightY);
+		}
+		else if(character.equalsIgnoreCase("Pawn")){
+			this.button.setIcon(CharectorIcon.PawnY);
+		}
+		else if(character.equalsIgnoreCase("Rook")){
+			this.button.setIcon(CharectorIcon.RookY);
+		}
+		else if(character.equalsIgnoreCase("Bishop")){
+			this.button.setIcon(CharectorIcon.BishopY);
+		}
+		board.current.button.setText(empty);
+		board.current.button.setIcon(null);
+		//this.button.setText(character);
+		
+		
+		
+		
+		board.current = null;
+	}
+	
+}

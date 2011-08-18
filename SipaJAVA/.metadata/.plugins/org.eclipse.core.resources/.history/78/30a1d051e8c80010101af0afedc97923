@@ -1,0 +1,15 @@
+package Sipa;
+
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+public class CharectorIcon {
+	Toolkit kit = Toolkit.getDefaultToolkit();
+	Image img1 = kit.getImage("images/icon_widget.png");
+	Image img2 = kit.getImage("images/icon_languagePack.gif");
+	Icon icon1 = new ImageIcon(img1);	// set Icon button1
+	Icon icon2 = new ImageIcon(img2);	// set Icon button1
+}

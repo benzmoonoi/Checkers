@@ -1,0 +1,17 @@
+import javax.swing.JFrame;
+
+
+public class MyFrame4 extends JFrame{
+	public MyFrame4() {
+		// TODO Auto-generated constructor stub
+		
+		
+		setSize(400,300);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+	public static void main(String args[]){
+		MyFrame4 f = new MyFrame4();
+	}
+
+}

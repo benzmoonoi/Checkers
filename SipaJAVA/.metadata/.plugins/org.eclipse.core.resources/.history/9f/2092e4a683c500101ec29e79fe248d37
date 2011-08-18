@@ -1,0 +1,5 @@
+package exception;
+
+public class TestStack {
+	int stack[] = new int[5];
+}

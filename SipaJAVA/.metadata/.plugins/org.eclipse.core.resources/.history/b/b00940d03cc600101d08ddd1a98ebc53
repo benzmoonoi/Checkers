@@ -1,0 +1,41 @@
+package files;
+
+import java.io.File;
+import java.util.Formatter;
+import java.util.Scanner;
+
+public class StudentApp {
+	File file = new File("tmp.txt");
+	Formatter out;
+	
+	public StudentApp() {
+		try {
+			this.out = new Formatter(file);
+		} catch (Exception e) {
+			System.out.print(e.getMessage());
+		}		
+	}
+	public void addRecord(Student student){
+		out.format("%2d %-5s %3.2f\n",
+				student.getId(),
+				student.getName(),
+				student.getScore());
+		out.flush();
+	}
+	public Student input(){
+		Scanner scan = new Scanner(System.in);
+		System.out.println("id : ");
+		int id = scan.nextInt();
+		System.out.println("Name : ");
+		String name = scan.next();
+		System.out.println("score : ");
+		float score = scan.nextFloat();
+
+		return new Student(id,name,score);
+	}
+	public static void main(String[] args) {
+		StudentApp st = new StudentApp();
+		Student s = st.input();
+		st.addRecord(s);
+	}
+}

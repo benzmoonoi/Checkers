@@ -1,0 +1,27 @@
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class MyFrame5 extends JFrame{
+	JPanel jPanel = new JPanel();
+	public MyFrame5() {
+		// TODO Auto-generated constructor stub
+		add(jPanel);
+		setSize(300,500);
+		setBackground(Color.blue);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyFrame5 f = new MyFrame5();
+
+	}
+
+}

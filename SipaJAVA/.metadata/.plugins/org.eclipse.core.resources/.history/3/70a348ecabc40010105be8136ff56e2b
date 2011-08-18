@@ -1,0 +1,43 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Panel;
+import java.awt.Toolkit;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+
+public class Frame2 extends JFrame {
+	JButton b1,b2,b3,b4,b5;
+	JPanel cPanel;
+	public Frame2(){
+		b1 = new JButton("Button1");
+		b2 = new JButton("Button2");
+		b3 = new JButton("Button3");
+		b4 = new JButton("Button4");
+		b5 = new JButton("Button5");
+
+		
+		cPanel = new JPanel();
+		cPanel.add(b1);
+		cPanel.add(b2);
+		cPanel.add(b3);
+		cPanel.add(b4);
+		cPanel.add(b5);
+
+		add(cPanel);
+		setSize(500,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		Frame2 f = new Frame2();
+
+	}
+
+}

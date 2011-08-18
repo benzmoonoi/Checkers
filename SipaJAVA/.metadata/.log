@@ -1,0 +1,43 @@
+!SESSION 2011-08-13 10:00:00.015 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ui 4 4 2011-08-13 15:00:50.718
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.
+!SESSION 2011-08-14 10:03:00.015 -----------------------------------------------
+eclipse.buildId=M20110210-1200
+java.version=1.6.0_25
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.ltk.ui.refactoring 4 10000 2011-08-14 11:59:14.734
+!MESSAGE Internal Error
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while moving resources.
+	at org.eclipse.core.internal.resources.Resource.move(Resource.java:1609)
+	at org.eclipse.ltk.core.refactoring.resource.RenameResourceChange.perform(RenameResourceChange.java:123)
+	at org.eclipse.ltk.core.refactoring.CompositeChange.perform(CompositeChange.java:278)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:258)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1975)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:306)
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:92)
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:218)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:1975)
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+Contains: File already exists on disk: E:\SipaJAVAProgramming\sipa\student.txt.
+!SUBENTRY 1 org.eclipse.core.resources 4 4 2011-08-14 11:59:14.765
+!MESSAGE Problems encountered while moving resources.
+!SUBENTRY 2 org.eclipse.core.filesystem 4 268 2011-08-14 11:59:14.765
+!MESSAGE File already exists on disk: E:\SipaJAVAProgramming\sipa\student.txt.
+
+!ENTRY org.eclipse.core.resources 4 4 2011-08-14 11:59:14.843
+!MESSAGE Problems encountered while moving resources.
+!SUBENTRY 1 org.eclipse.core.filesystem 4 268 2011-08-14 11:59:14.843
+!MESSAGE File already exists on disk: E:\SipaJAVAProgramming\sipa\student.txt.

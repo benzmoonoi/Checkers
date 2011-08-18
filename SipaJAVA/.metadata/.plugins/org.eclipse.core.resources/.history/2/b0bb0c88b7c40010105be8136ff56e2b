@@ -1,0 +1,14 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JLabel;
+
+
+public class MyListener implements ActionListener {
+
+	JLabel lbl2;
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		lbl2 = new JLabel("hello");		
+	}	
+}

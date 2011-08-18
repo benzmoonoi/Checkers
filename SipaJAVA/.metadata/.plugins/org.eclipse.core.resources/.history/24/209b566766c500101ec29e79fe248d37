@@ -1,0 +1,16 @@
+
+public class MyFrame8 {
+
+	public MyFrame8() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

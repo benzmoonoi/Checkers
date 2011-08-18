@@ -1,0 +1,26 @@
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame{
+	Point p = new Point(100,100);
+	// Default Constructor
+	public MyFrame(){
+		setSize(400,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		Image img = kit.getImage("images/appGallery_skin.gif");
+		setIconImage(img);
+		setVisible(true);
+		setLocation(p);
+		setBackground(Color.green);
+	}	
+	// Constructor
+	public MyFrame(String name){
+		this();
+		this.setTitle(name);		
+	}
+}
+

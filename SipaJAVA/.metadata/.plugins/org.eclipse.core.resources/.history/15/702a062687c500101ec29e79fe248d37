@@ -1,0 +1,44 @@
+package exception;
+
+import java.util.Arrays;
+
+public class TestStack {
+	int stack[] = new int[5];
+	int index = 0;
+	void push(int x) throws MyStackException{
+		if(index > 4){
+			throw new MyStackException("Stack is overflow");
+		}
+		stack[index++] = x;
+	}
+	int pop() throws MyStackException{
+		//stack[--index] = 0;
+		if(index == 0){
+			throw new MyStackException("Emptry stack");
+		}
+		return stack[--index];		
+	}
+	void printStack(){
+		System.out.println(Arrays.toString(stack));
+	}
+	public static void main(String args[]){
+		TestStack s = new TestStack();
+		
+		try {
+			s.push(5);
+		} catch (MyStackException e1) {
+			// TODO Auto-generated catch block
+			System.out.println(e1.getMessage());
+		}
+		//s.push(7);
+		try {
+			System.out.println(s.pop());
+		} catch (MyStackException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		//System.out.println(s.pop());
+		//s.push(2);
+		//s.printStack();
+	}
+}

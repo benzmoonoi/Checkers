@@ -1,0 +1,82 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+
+public class Frame2 extends JFrame {
+
+	public Frame2(){
+		setSize(800,600);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		Image img = kit.getImage("images/appGallery_skin.gif");	// set Icon of frame
+		setIconImage(img);
+		Image img1 = kit.getImage("images/icon_widget.png");
+		Image img2 = kit.getImage("images/icon_languagePack.gif");
+		Icon icon1 = new ImageIcon(img1);	// set Icon button1
+		Icon icon2 = new ImageIcon(img2);	// set Icon button1
+
+		
+		JButton b1 = new JButton("Click Me",icon1); //set Images
+		b1.setRolloverIcon(icon2);
+		//b1.setToolTipText("don't click");
+		//add(b1,BorderLayout.SOUTH);
+		//b1.setBounds(50,100,100,25);
+		b1.setVerticalTextPosition(SwingConstants.CENTER);
+		b1.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JButton b2 = new JButton("Click Me b2", icon1);
+		b2.setRolloverIcon(icon2);
+		//add(b2,BorderLayout.SOUTH);		
+		//setLayout(new FlowLayout());
+		b2.setVerticalTextPosition(SwingConstants.CENTER);
+		b2.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JButton b3 = new JButton("Click Me",icon1); //set Images
+		b3.setRolloverIcon(icon2);
+		//b1.setToolTipText("don't click");
+		//add(b1,BorderLayout.SOUTH);
+		//b1.setBounds(50,100,100,25);
+		b3.setVerticalTextPosition(SwingConstants.CENTER);
+		b3.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JButton b4 = new JButton("Click Me b2", icon1);
+		b4.setRolloverIcon(icon2);
+		//add(b2,BorderLayout.SOUTH);		
+		//setLayout(new FlowLayout());
+		b4.setVerticalTextPosition(SwingConstants.CENTER);
+		b4.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JButton b5 = new JButton("Click Me b2", icon1);
+		b5.setRolloverIcon(icon2);
+		//add(b2,BorderLayout.SOUTH);		
+		//setLayout(new FlowLayout());
+		b5.setVerticalTextPosition(SwingConstants.CENTER);
+		b5.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(Color.red);
+		panel.add(b1);
+		panel.add(b2);
+		panel.add(b3);
+		panel.add(b4);
+		panel.add(b5);
+		add(panel,BorderLayout.NORTH);
+		
+		//setLayout(null);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		Frame2 f = new Frame2();
+
+	}
+
+}

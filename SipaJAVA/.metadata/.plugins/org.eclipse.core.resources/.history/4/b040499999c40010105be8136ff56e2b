@@ -1,0 +1,38 @@
+
+import java.awt.BorderLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame{
+
+	// Default Constructor
+	public MyFrame(){
+		
+		setSize(400,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		Image img = kit.getImage("images/appGallery_skin.gif");
+		setIconImage(img);
+		// create components
+		JButton b1 = new JButton("Click Me");
+		add(b1,BorderLayout.NORTH);
+		JButton b2 = new JButton("Click Me b2");
+		add(b2,BorderLayout.WEST);
+		
+		
+		setVisible(true);
+	}	
+	// Constructor
+	public MyFrame(String name){
+		this();
+		this.setTitle(name);		
+	}
+	
+	public static void main(String args[]){
+		MyFrame f = new MyFrame("Hello JFrame");
+	}
+}
+

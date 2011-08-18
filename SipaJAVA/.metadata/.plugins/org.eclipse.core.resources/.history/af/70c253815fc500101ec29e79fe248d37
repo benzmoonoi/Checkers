@@ -1,0 +1,27 @@
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class MyFrame7 extends JFrame{
+	JPanel panel = new JPanel();
+	JButton bOK = new JButton("OK");
+
+	public MyFrame7() {
+		// TODO Auto-generated constructor stub
+		add(panel);
+		panel.add(bOK);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyFrame7 f = new MyFrame7();
+		f.setSize(200,200);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		f.setVisible(true);	
+	}
+
+}

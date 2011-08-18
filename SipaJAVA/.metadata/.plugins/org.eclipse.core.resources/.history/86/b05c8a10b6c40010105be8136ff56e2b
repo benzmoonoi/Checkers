@@ -1,0 +1,53 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+
+
+public class MyFrame2 extends JFrame {
+	JButton b1,b2,b3,b4,b5;
+	JLabel lblstatus;
+	JPanel cPanel,rPanel;
+	public MyFrame2(){
+		b1 = new JButton("Button1");
+		b1.addActionListener(new MyListener());
+		b2 = new JButton("Button2");
+		b3 = new JButton("Button3");
+		b4 = new JButton("Button4");
+		b5 = new JButton("Button5");
+
+		lblstatus = new JLabel("status bar");
+		
+		cPanel = new JPanel();//Default Layout Panel is FlowLayout
+		rPanel = new JPanel();
+		//                                fix row   column follow row  
+		//cPanel.setLayout(new GridLayout(0,        1)); // if fix row = 0
+		//cPanel.setLayout(new GridLayout(1,0)); 
+		//rPanel.setLayout(new GridLayout(0,1));
+		// paste Button on Panel
+		rPanel.add(b1);
+		/*rPanel.add(b2);
+		rPanel.add(b3);
+		rPanel.add(b4);
+		rPanel.add(b5);*/
+		rPanel.setBackground(Color.red);
+		// paste Panel on Frame
+		add(rPanel,BorderLayout.EAST);
+		add(lblstatus,BorderLayout.SOUTH);
+		
+		// set Frame
+		setSize(500,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		MyFrame2 f = new MyFrame2();
+
+	}
+
+}

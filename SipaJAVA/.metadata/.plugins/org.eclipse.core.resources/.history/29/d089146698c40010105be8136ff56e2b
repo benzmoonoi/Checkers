@@ -1,0 +1,29 @@
+
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+
+public class MyFrame extends JFrame{
+
+	// Default Constructor
+	public MyFrame(){
+		setVisible(true);
+		setSize(400,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		Image img = kit.getImage("images/appGallery_skin.gif");
+		setIconImage(img);
+		
+	}	
+	// Constructor
+	public MyFrame(String name){
+		this();
+		this.setTitle(name);		
+	}
+	
+	public static void main(String args[]){
+		MyFrame f = new MyFrame("Hello JFrame");
+	}
+}
+

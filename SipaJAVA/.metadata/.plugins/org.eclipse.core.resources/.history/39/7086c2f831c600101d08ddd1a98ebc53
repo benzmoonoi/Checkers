@@ -1,0 +1,29 @@
+package files;
+
+import java.io.File;
+import java.util.Formatter;
+
+public class StudentApp {
+	File file = new File("student.txt");
+	Formatter out;
+	
+	public StudentApp() {
+		try {
+			this.out = new Formatter(file);
+		} catch (Exception e) {
+			System.out.print(e.getMessage());
+		}		
+	}
+	public void addRecord(Student st){
+		out.format("%2d %-5s %3.2f\n",
+				st.getId(),
+				st.getName(),
+				st.getScore());
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StudentApp st = new StudentApp();
+		st.addRecord(student);
+	}
+
+}

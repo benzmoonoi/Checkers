@@ -1,0 +1,199 @@
+package Sipa;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class BoardView extends JFrame {
+	static Color boardEvenColor = Color.BLACK;
+	static Color boardOddColor = Color.WHITE;
+	static final int width = 750;
+	static final int hight = 750;
+	JPanel panel = new JPanel();
+	String stateOle = "";
+	String stateNew = "";
+	TileMouseAdapter current = null;
+	boolean cur = false;
+	static JButton[][] b = new JButton[8][8];
+
+	public BoardView() {
+		createButton(); 						// create button	
+		loadModel(); 							// load BoardModel
+		setColorButton(); 						// set Color to Button
+		addButtonToBoard(panel); 				// add button to panel
+		setNameButton();						// set Name of Button
+		setTextButton(); 						// set Text of Button
+		loadBoradICon();
+		for(int i=7;i>=0;i--){
+			for(int j=0;j<8;j++){
+				b[i][j].addMouseListener(new TileMouseAdapter(b[i][j], this, i, j));
+			}
+		}
+				
+		addMouseLis(new MyMouseListener()); 	// addMouseListener to button
+						
+		setFrame(this, panel);					// set Frame
+	}
+
+	public static void main(String[] args) {
+		new BoardView();
+	}
+
+	// create button
+	public static void createButton(){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				b[i][j] = new JButton();
+			}
+		}
+	}
+	// set Name of Button
+	public static void setNameButton(){
+		for(int i=7;i>=0;i--){
+			for(int j=0;j<8;j++){
+				if(j==0){
+					b[i][j].setName(i+1 + "A");
+				}else if (j==1){
+					b[i][j].setName(i+1 + "B");
+				}else if(j==2){
+					b[i][j].setName(i+1 + "C");
+				}else if(j==3){
+					b[i][j].setName(i+1 + "D");
+				}else if(j==4){
+					b[i][j].setName(i+1 + "E");
+				}else if(j==5){
+					b[i][j].setName(i+1 + "F");
+				}else if(j==6){
+					b[i][j].setName(i+1 + "G");
+				}else if(j==7){
+					b[i][j].setName(i+1 + "H");
+				}
+			}
+		}
+	}
+	// set Text of Button
+	public static void setTextButton(){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				b[i][j].setText(BoardModel.getCharecter(i, j));	
+			}
+		}
+	}
+	// set color of button
+	public static void setColorButton() {
+		// set background Button
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				if(i%2==0){
+					if(j%2==0){
+						b[i][j].setBackground(boardOddColor);
+					}else {
+						b[i][j].setBackground(boardEvenColor);
+					}
+				}else if(i%2!=0){
+					if(j%2==0){
+						b[i][j].setBackground(boardEvenColor);
+					}else {						
+						b[i][j].setBackground(boardOddColor);
+					}
+				}
+			}
+		}
+	}
+
+	// add button on panel
+	// addMouseListerner to button
+	public static void addMouseLis(MyMouseListener m){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				b[i][j].addMouseListener(m);
+			}
+		}
+	}
+	// add button to panel
+	public static void addButtonToBoard(JPanel panel) {
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				panel.add(b[i][j]);
+			}
+		}
+	}
+
+	// set Frame
+	public static void setFrame(JFrame frame, JPanel panel) {
+		frame.add(panel); // add panel to frame
+		panel.setLayout(new GridLayout(8, 8)); // set panel to GridLyout
+		panel.setBackground(Color.PINK); // set background
+
+		frame.setSize(width, hight);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+	}
+	// load Board Model to Board View
+	public static void loadModel() {
+		//BoardModel.resetCharecter();
+		//BoardModel.getBoard();
+		//BoardModel.setCharecter(0, 0, "Queen");
+		//BoardModel.printBoard();
+		//BoardModel.loadBorad(); // load game default
+		
+	}
+	
+	public static void loadBoradICon(){
+
+		b[0][0].setIcon(CharectorIcon.RookY); 	b[0][1].setIcon(CharectorIcon.KnightY); b[0][2].setIcon(CharectorIcon.BishopY); 	b[0][3].setIcon(CharectorIcon.KingY); 
+		b[0][4].setIcon(CharectorIcon.QueenY); 	b[0][5].setIcon(CharectorIcon.BishopY); b[0][6].setIcon(CharectorIcon.KnightY); 	b[0][7].setIcon(CharectorIcon.RookY); 
+		
+		b[1][0].setIcon(CharectorIcon.PawnY); 	b[1][1].setIcon(CharectorIcon.PawnY); b[1][2].setIcon(CharectorIcon.PawnY); 	b[1][3].setIcon(CharectorIcon.PawnY); 
+    	b[1][4].setIcon(CharectorIcon.PawnY); 	b[1][5].setIcon(CharectorIcon.PawnY); b[1][6].setIcon(CharectorIcon.PawnY); 	b[1][7].setIcon(CharectorIcon.PawnY); 
+    	
+    	b[6][0].setIcon(CharectorIcon.PawnB); 	b[6][1].setIcon(CharectorIcon.PawnB); b[6][2].setIcon(CharectorIcon.PawnB); 	b[6][3].setIcon(CharectorIcon.PawnB); 
+    	b[6][4].setIcon(CharectorIcon.PawnB); 	b[6][5].setIcon(CharectorIcon.PawnB); b[6][6].setIcon(CharectorIcon.PawnB); 	b[6][7].setIcon(CharectorIcon.PawnB); 
+    	
+    	b[7][0].setIcon(CharectorIcon.RookB); 	b[7][1].setIcon(CharectorIcon.KnightB); b[7][2].setIcon(CharectorIcon.BishopB); 	b[7][3].setIcon(CharectorIcon.QueenB); 
+		b[7][4].setIcon(CharectorIcon.KingB); 	b[7][5].setIcon(CharectorIcon.BishopB); b[7][6].setIcon(CharectorIcon.KnightB); 	b[7][7].setIcon(CharectorIcon.RookB); 
+	}
+	// inner class 
+	class MyMouseListener implements MouseListener {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			for(int i=0;i<8;i++){
+				for(int j=0;j<8;j++){
+					if (e.getSource() == b[i][j]) {
+						cur = true;
+						//System.out.println(b[i][j].getName());
+						//stateOle = BoardModel.getCharecter(i, j);
+//						System.out.println(b[i][j].getHeight());
+//						System.out.println(b[i][j].getWidth());
+					}			
+				}
+			}
+		}
+		@Override
+		public void mouseEntered(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+
+		}
+		@Override
+		public void mouseExited(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+
+		}
+		@Override
+		public void mousePressed(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+
+		}
+		@Override
+		public void mouseReleased(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+
+		}
+	}	
+}

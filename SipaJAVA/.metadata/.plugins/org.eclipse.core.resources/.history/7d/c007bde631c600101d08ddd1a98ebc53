@@ -1,0 +1,34 @@
+package files;
+
+public class Student {
+	private int id;
+	private String name;
+	private float score;
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+	public Student(int id, String name, float score) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.score = score;
+	}
+	private int getId() {
+		return id;
+	}
+	private void setId(int id) {
+		this.id = id;
+	}
+	private String getName() {
+		return name;
+	}
+	private void setName(String name) {
+		this.name = name;
+	}
+	private float getScore() {
+		return score;
+	}
+	private void setScore(float score) {
+		this.score = score;
+	}
+}

@@ -1,0 +1,28 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+
+public class Frame2 extends JFrame {
+	JButton b1,b2,b3,b4,b5;
+
+	public Frame2(){
+		add(b1);
+		setSize(500,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		Frame2 f = new Frame2();
+
+	}
+
+}

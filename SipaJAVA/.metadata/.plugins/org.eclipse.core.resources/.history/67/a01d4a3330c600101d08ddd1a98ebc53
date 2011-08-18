@@ -1,0 +1,34 @@
+package files;
+
+import java.io.FileNotFoundException;
+import java.util.Formatter;
+import java.util.Scanner;
+
+public class Format {
+
+	/**
+	 * @param args
+	 * @throws FileNotFoundException 
+	 */
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		//Formatter out = new Formatter("tmp.txt");
+		int id;
+		String name = "";
+		float score;
+		/*out.format("%2d %-5s %3.2f\n",id,name,score);
+		out.flush();*/
+		Scanner s = null;
+		System.out.println("Enter id");
+		Scanner s2 = s;
+		id = s2.nextInt();
+		System.out.println("Enter name");
+		name = s2.next(name);
+		System.out.println("Enter score");
+		score = s2.nextFloat();
+		
+		System.out.println(id + name + score);
+		
+	}
+
+}

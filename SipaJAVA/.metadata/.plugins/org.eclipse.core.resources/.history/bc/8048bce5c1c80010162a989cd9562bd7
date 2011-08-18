@@ -1,0 +1,31 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import Sipa.BoardModel;
+
+public class BoardModelTest {
+
+	@Test
+	public void testSetBoard() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testResetBoard() {
+		BoardModel board = new BoardModel();
+		board.resetBoard();
+		
+		String expected = "empty empty empty empty empty empty empty empty \n" +
+"empty empty empty empty empty empty empty empty \n" +
+"empty empty empty empty empty empty empty empty \n" +
+"empty empty empty empty empty empty empty empty \n" +
+"empty empty empty empty empty empty empty empty \n" +
+"empty empty empty empty empty empty empty empty \n" +
+"empty empty empty empty empty empty empty empty \n" +
+"empty empty empty empty empty empty empty empty "
+	}
+
+}

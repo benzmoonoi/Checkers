@@ -1,0 +1,24 @@
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+
+public class MyFrame5 extends JFrame{
+
+	public MyFrame5() {
+		// TODO Auto-generated constructor stub
+		setSize(300,500);
+		setBackground(Color.blue);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

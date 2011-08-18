@@ -1,0 +1,12 @@
+package Sipa;
+
+import org.junit.Test;
+
+
+public class BoardModelTest {
+	@Test
+	public void setBoard() {
+		
+	}
+	
+}

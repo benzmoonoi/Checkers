@@ -1,0 +1,25 @@
+package exception;
+
+import java.util.Arrays;
+
+public class TestStack {
+	int stack[] = new int[5];
+	int index = 0;
+	void push(int x){
+		stack[index] = x;
+	}
+	int pop(){
+		return 0;
+	}
+	void printStack(){
+		Arrays.toString(stack);
+	}
+	public static void main(String args[]){
+		TestStack s = new TestStack();
+		s.printStack();
+		s.push(5);
+		s.push(7);
+		System.out.println(s.pop());
+		
+	}
+}

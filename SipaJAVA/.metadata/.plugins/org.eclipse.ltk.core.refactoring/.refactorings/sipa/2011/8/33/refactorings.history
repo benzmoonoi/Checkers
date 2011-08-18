@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Frame2&apos; to &apos;MyFrame2&apos;&#x0D;&#x0A;- Original project: &apos;TestGui&apos;&#x0D;&#x0A;- Original element: &apos;Frame2&apos;&#x0D;&#x0A;- Renamed element: &apos;MyFrame2&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Frame2&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Frame2.java[Frame2" matchStrategy="1" name="MyFrame2" qualified="false" references="true" similarDeclarations="false" stamp="1313131176156" textual="false" version="1.0"/>
+</session>

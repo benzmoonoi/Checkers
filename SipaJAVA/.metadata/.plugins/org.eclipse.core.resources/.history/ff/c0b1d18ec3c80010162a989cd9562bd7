@@ -1,0 +1,44 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import Sipa.BoardModel;
+
+public class BoardModelTest {
+
+	@Test
+	public void testSetBoard() {
+		BoardModel.resetBoard();
+		BoardModel.setBoard(0, 0, "Queen");
+		
+		String expected = "Queen empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+		assertEquals(expected, BoardModel.getBoardStates());
+	}
+
+	@Test
+	public void testResetBoard() {
+		BoardModel.resetBoard();
+
+		String expected = "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ "empty empty empty empty empty empty empty empty \n"
+						+ ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+		assertEquals(expected, BoardModel.getBoardStates());
+	}
+
+}

@@ -1,0 +1,24 @@
+package Sipa;
+
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
+public class CharectorIcon {
+	static Toolkit kit = Toolkit.getDefaultToolkit();
+	static Image imgKing = kit.getImage("images/KingYellow.png");
+	static Image imgQueen = kit.getImage("images/QueenYellow.png");
+	static Image imgKnight = kit.getImage("images/KnightYellow.png");
+	static Image imgPawn = kit.getImage("images/PawnYellow.png");
+	static Image imgRook = kit.getImage("images/RookYellow.png");
+	static Image imgBishop = kit.getImage("images/BishopYellow.png");
+	
+	static Icon King = new ImageIcon(imgKing);	// set Icon button1
+	static Icon Queen = new ImageIcon(imgQueen);	// set Icon button1
+	static Icon Knight  = new ImageIcon(imgKnight);	// set Icon button1
+	static Icon Pawn = new ImageIcon(imgPawn);	// set Icon button1
+	static Icon Rook = new ImageIcon(imgRook);	// set Icon button1
+	static Icon Bishop = new ImageIcon(imgBishop);	// set Icon button1
+}

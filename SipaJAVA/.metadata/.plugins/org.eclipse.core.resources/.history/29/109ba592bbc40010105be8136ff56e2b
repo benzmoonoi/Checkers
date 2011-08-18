@@ -1,0 +1,28 @@
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class MyFrame4 extends JFrame{
+	JButton b1,b2;
+	JPanel jPanel;
+	public MyFrame4() {
+		// TODO Auto-generated constructor stub
+		b1 = new JButton("button1");
+		b2 = new JButton("button2");
+		jPanel = new JPanel();
+		add(b1);
+		add(b2);
+		setLayout(new FlowLayout());
+		
+		setSize(400,100);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+	public static void main(String args[]){
+		MyFrame4 f = new MyFrame4();
+	}
+
+}

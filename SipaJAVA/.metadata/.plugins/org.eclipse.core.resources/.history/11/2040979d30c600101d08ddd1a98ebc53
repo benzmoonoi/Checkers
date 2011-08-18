@@ -1,0 +1,10 @@
+package files;
+
+public class Student {
+	private id;
+	private name;
+	private score;
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="JUnitWizards">
+		<item value="false" key="NewTestCaseCreationWizardPage.USE_TEARDOWNCLASS"/>
+		<item value="false" key="NewTestCaseCreationWizardPage.USE_CONSTRUCTOR"/>
+		<item value="false" key="NewTestCaseCreationWizardPage.USE_SETUP"/>
+		<item value="false" key="NewTestCaseCreationWizardPage.USE_TEARDOWN"/>
+		<item value="false" key="NewTestCaseCreationWizardPage.USE_SETUPCLASS"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.junit.ui.CompareResultDialog">
+		<item value="1061" key="DIALOG_WIDTH"/>
+		<item value="65" key="DIALOG_Y_ORIGIN"/>
+		<item value="705" key="DIALOG_HEIGHT"/>
+		<item value="77" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

@@ -1,0 +1,29 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+
+public class TestException {
+
+	static int input(){
+		int re = 0;
+		Scanner scanner = new Scanner(System.in);
+		try {
+			re = scanner.nextInt();
+		} catch (InputMismatchException e) {
+			// TODO: handle exception
+			System.out.println("Exception");
+		}
+		return re;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.print("Enter First number: ");
+		int x = input();
+		System.out.print("Enter Second number: ");
+		int y = input();
+		System.out.println(x/y);
+		System.out.print("Bye");
+	}
+
+}

@@ -1,0 +1,42 @@
+package Sipa;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JButton;
+
+public class TileMouseAdapter extends MouseAdapter {
+	private JButton button;
+	BoardView board;
+	int x;
+	int y;
+	
+	public TileMouseAdapter(JButton button, BoardView board, int x, int y) {
+		this.button = button;
+		this.board = board;
+		this.x = x;
+		this.y = y;
+	}
+	
+	@Override
+	public void mouseClicked(MouseEvent event) {
+		if (board.current == null) {
+			pick();
+		} else {
+			put();
+		}
+		super.mouseClicked(event);
+	}
+	
+	public void pick() {
+		board.current = this;
+		System.out.println("pick " + board.current.x + ", " + board.current.y);
+	}
+
+	public void put() {
+		System.out.println("put = " + board.current.x + ", " + board.current.y);
+//		button.setText(board.current);
+		board.current = null;
+	}
+	
+}

@@ -1,0 +1,42 @@
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+
+public class MyFrame6 extends JFrame implements ListSelectionListener{
+	private JList colorList;
+	private final String colorName[] = {"Black","Blue","Cyan"};
+	private final Color colors[] = {Color.black,Color.blue,Color.CYAN};
+	JPanel panel = new JPanel();
+	public MyFrame6() {
+		colorList = new JList(colorName);
+		add(panel);
+		panel.add(colorList);
+		panel.setBackground(Color.yellow);
+		
+		setSize(300,300);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new MyFrame6();
+	}
+
+	@Override
+	public void valueChanged(ListSelectionEvent arg0) {
+		// TODO Auto-generated method stub
+		panel.setBackground(colors[colorList.getSelectedIndex()]);
+		
+	}
+
+}

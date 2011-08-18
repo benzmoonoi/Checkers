@@ -1,0 +1,19 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BoardModelTest {
+
+	@Test
+	public void testSetBoard() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testResetBoard() {
+		fail("Not yet implemented");
+	}
+
+}
