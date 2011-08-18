@@ -225,7 +225,7 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 	}
 
 	// check ควีน player2
-	public static Object checkQueenP2() {
+	public static String checkQueenP2() {
 		resetCharecter();
 		setState();
 		loadBorad();
@@ -241,7 +241,7 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 		return ckP2;
 	}
 	// check โคน player1
-	public static Object CheckBishopP1() {
+	public static String CheckBishopP1() {
 		resetCharecter();
 		setState();
 		loadBorad();
@@ -257,7 +257,7 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 		return ckP1;
 	}
 	// check โคน player2
-	public static Object CheckBishopP2() {
+	public static String CheckBishopP2() {
 		resetCharecter();
 		setState();
 		loadBorad();
@@ -274,7 +274,7 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 	}
 	
 	// check ม้า player2
-	public static Object CheckKnightP1() {
+	public static String CheckKnightP1() {
 		resetCharecter();
 		setState();
 		loadBorad();
@@ -291,7 +291,7 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 	}
 	
 	// check ม้า player1
-	public static Object CheckKnightP2() {
+	public static String CheckKnightP2() {
 		resetCharecter();
 		setState();
 		loadBorad();
@@ -305,6 +305,27 @@ static public String[] charec = {"RookP1","KnightP1","BishopP1","QueenP1","KingP
 			}
 		}
 		return ckP2;
+	}
+	
+	public static void getP2(){
+		for(int i=0;i<8;i++){
+			for(int j=0;j<8;j++){
+				if(charecter[i][j].equals("RookP2")|
+				   charecter[i][j].equals("KnightP2")|
+				   charecter[i][j].equals("BishopP2")|
+				   charecter[i][j].equals("QueenP2")|
+				   charecter[i][j].equals("KingP2")|
+				   charecter[i][j].equals("PawnP2")){
+					
+				}
+			}
+		}
+		
+	}
+	
+	public static void main(String args[]){
+		System.out.println(CheckKnightP1());
+
 	}
 
 }

@@ -1,8 +1,7 @@
 package Sipa;
 
 public class Chess {
-	public static void main(String args[]){
-		System.out.println(BoardModel.CheckKnightP1());
+	public static void main(String args[]) {
+		BoardView b = new BoardView();
 	}
-
 }

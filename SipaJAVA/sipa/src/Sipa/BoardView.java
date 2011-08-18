@@ -31,25 +31,21 @@ public class BoardView extends JFrame {
 	JPanel panelStateUser = new JPanel();
 
 	public BoardView() {
+		BoardModel.resetCharecter();
 		createButton(); 						// create button	
 		loadModel(); 							// load BoardModel
 		setColorButton(); 						// set Color to Button
 		addButtonToBoard(panel); 				// add button to panel
 		setNameButton();						// set Name of Button
-		setTextButton(); 						// set Text of Button
+		//setTextButton(); 						// set Text of Button
 		loadBoradICon();
 		// register button to MouseListenner
 		for(int i=7;i>=0;i--){
 			for(int j=0;j<8;j++){
-				b[i][j].addMouseListener(new TileMouseAdapter(b[i][j], this, i, j, player));
+				b[i][j].addMouseListener(new TileMouseAdapter(b[i][j], this, i, j, player, panelLabelPlayer));
 			}
 		}						
 		setFrame(this, panel , panelLabelPlayer, panelLabelColumn, panelLabelRow, panelStateUser);	// set Frame
-	}
-
-	 
-	public static void main(String[] args) {
-		new BoardView();
 	}
 
 	// create button
