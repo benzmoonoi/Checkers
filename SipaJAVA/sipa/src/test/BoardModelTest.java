@@ -229,10 +229,15 @@ public class BoardModelTest {
 		assertEquals(expected, BoardModel.CheckKnightP2());
 	}
 	
-//	@Test
-//	public void winner(){
-//		String expected  = "player1";
-//		
-//		assertEquals(expected, BoardModel.winner());
-//	}
+	@Test
+	public void getWinner(){
+		String expected = "OK";
+		assertEquals(expected, BoardModel.getWinner());
+	}
+	@Test
+	public void getWinner2(){
+		BoardModel.setCharecter(0, 3, "empty");
+		String expected = "No";
+		assertEquals(expected, BoardModel.getWinner());
+	}
 }

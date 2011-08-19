@@ -6,7 +6,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import org.hamcrest.CoreMatchers;
 
 public class TileMouseAdapter implements ActionListener {
 	private JButton button;
@@ -20,9 +23,10 @@ public class TileMouseAdapter implements ActionListener {
 	JPanel panelTop;
 	static String test;
 	static Color stateColor;
+	JPanel panelRight;
 
 	public TileMouseAdapter(JButton button, BoardView board, int x, int y,
-			JLabel player, JPanel panelLabelPlayer) {
+			JLabel player, JPanel panelLabelPlayer, JPanel panelStateUser) {
 		this.button = button;
 		this.board = board;
 		this.x = x;
@@ -32,7 +36,11 @@ public class TileMouseAdapter implements ActionListener {
 		this.p.setText("Player1");
 		this.panelTop = panelLabelPlayer;
 		this.panelTop.setBackground(Color.YELLOW);
+		this.panelRight = panelStateUser;
+		this.panelRight.setBackground(Color.BLACK);
 		disEnableBoard(player2);
+		disEnablePlayer2(player2);
+		System.out.println(BoardModel.getBoardStates());
 
 	}
 
@@ -45,6 +53,7 @@ public class TileMouseAdapter implements ActionListener {
 		// System.out.println(test);
 		stateColor = this.button.getBackground();
 		this.button.setBackground(Color.GREEN);
+		
 	}
 
 	public void put() {
@@ -71,7 +80,7 @@ public class TileMouseAdapter implements ActionListener {
 			if (player2 == true) {
 				// System.out.println(player1);
 				// System.out.println("Player2");
-				// System.out.println(BoardModel.getBoardStates());
+				 System.out.println(BoardModel.getBoardStates());
 				if (character.equals("QueenP2")) {
 					this.button.setIcon(CharectorIcon.QueenB);
 				} else if (character.equals("KingP2")) {
@@ -96,7 +105,7 @@ public class TileMouseAdapter implements ActionListener {
 			} else {
 
 				// System.out.println("Player1");
-				// System.out.println(BoardModel.getBoardStates());
+				 System.out.println(BoardModel.getBoardStates());
 				if (character.equals("QueenP1")) {
 					this.button.setIcon(CharectorIcon.QueenY);
 					// disable player
@@ -272,10 +281,12 @@ public class TileMouseAdapter implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
+				
 		// System.out.println("enter mouse clicked");
 		if (board.current == null) {
 
 			disEnablePlayer2(player2);
+
 			pick();
 			disEnablePlayer1(player2);
 			enableBoard(player2); // open button is empty
